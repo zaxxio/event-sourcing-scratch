@@ -1,0 +1,45 @@
+spring:
+  # Kafka Bootstrap Server's
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: my-consumer-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: '*'
+    listener:
+      missing-topics-fatal: false
+      ack-mode: manual
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db
+    driver-class-name: org.postgresql.Driver
+    username: user
+    password: password
+    name: postgresDatasource
+  # Spring Data Persistence
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate.format_sql: false
+  # MongoDB Data Persistence
+  data:
+    mongodb:
+      repositories:
+        type: imperative
+      authentication-database: admin
+      auto-index-creation: true
+      database: mongodb
+      username: username
+      password: password
+      port: 27017
+      host: localhost

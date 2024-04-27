@@ -10,11 +10,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="core" />
         <module name="command.api" />
+        <module name="query.api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api" target="17" />
       <module name="core (1)" target="1.5" />
+      <module name="query-api" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -23,6 +25,8 @@
       <module name="command.api" options="-parameters" />
       <module name="core" options="-parameters" />
       <module name="core (1)" options="" />
+      <module name="query-api" options="-parameters" />
+      <module name="query.api" options="-parameters" />
     </option>
   </component>
 </project>

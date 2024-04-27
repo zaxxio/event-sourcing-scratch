@@ -1,14 +1,15 @@
-package org.wsd.events;
+package org.wsd.core.events;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-import org.wsd.messages.Message;
+import org.wsd.core.messages.Message;
 
-@Data
-@EqualsAndHashCode(callSuper = false)
+@Setter
+@Getter
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 public abstract class BaseEvent extends Message {
